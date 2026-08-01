@@ -93,6 +93,10 @@ function EnvoDonate () {
             setErrormsg(e => e = "Must enter valid Card Information");
             return
         }
+        else if (amount <= 0){
+            setErrormsg(e => e ="Must put in amount greater than 0");
+            return;
+        }
 
         setErrormsg(e => e = "");
         setAddress("");

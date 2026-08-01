@@ -159,6 +159,7 @@ function Guestspeaker () {
                             <Form.Label htmlFor="number">Phone Number</Form.Label>
                             <input id="number"
                             value={number}
+                            type="number"
                             placeholder="Optional"
                             style={{fontStyle:"italic"}}
                             onChange={(e) => setNumber(e.target.value)}/>
