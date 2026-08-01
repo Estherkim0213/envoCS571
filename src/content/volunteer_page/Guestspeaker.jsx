@@ -41,7 +41,7 @@ function Guestspeaker () {
     return <div style={{display:"flex", flexDirection: "column", gap: 80}}>
 
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={guestpanel} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+            <img src={guestpanel} alt="panel with 4 people sitting" style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 
@@ -80,7 +80,7 @@ function Guestspeaker () {
                 recent legislature, or other organizations that want to express their goals.</p>
 
                 <div style={{display: "flex", flexDirection:"row",}}>
-                        <img src={guest1} style={{maxWidth: 300, height: 400, objectFit:"cover", marginTop:50}}/>
+                        <img src={guest1} alt="image of Jude SUmmit talking" style={{maxWidth: 300, height: 400, objectFit:"cover", marginTop:50}}/>
                         <div style={{display: "flex",
                                     flexDirection: "column", 
                                     justifyContent:"center", 
@@ -119,7 +119,7 @@ function Guestspeaker () {
                                 She states that small changes are what keeps communities going, and small changes in community
                                 become big things.</p>
                         </div>
-                        <img src={guest2} style={{maxWidth: 300, height: 400, objectFit:"cover", margin: 80}}/>
+                        <img src={guest2} alt="image of Desiree Fixler talking" style={{maxWidth: 300, height: 400, objectFit:"cover", margin: 80}}/>
                 </div>
 
                 <p>We host all kinds of panels that you can be a part of.

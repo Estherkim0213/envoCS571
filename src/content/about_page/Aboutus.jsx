@@ -14,7 +14,7 @@ function Aboutus () {
     
     return <div style={{display:"flex", flexDirection: "column", gap: 80}}>
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={hand} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+            <img src={hand} alt="hand holding dirt and a plant" style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 
@@ -65,7 +65,7 @@ function Aboutus () {
                     in the city of Chicago, one of the most diverse cities in the nation! 
                 </p>
                     <div style={{display: "flex", flexDirection:"row",}}>
-                            <img src={chicago} style={{maxWidth: 400, height: 400, objectFit:"cover",}}/>
+                            <img src={chicago} alt="picture of chicago river" style={{maxWidth: 400, height: 400, objectFit:"cover",}}/>
                             <div style={{display: "flex",
                                         flexDirection: "column", 
                                         justifyContent:"center", 

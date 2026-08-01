@@ -20,7 +20,7 @@ function EnvoAboutUs () {
     return <div style={{display:"flex", flexDirection: "column", gap: 80}}>
 
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={ppl} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+            <img src={ppl} alt="staff huddled together in volunteer shirts" style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 

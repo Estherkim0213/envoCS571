@@ -48,7 +48,7 @@ function EnvoVolunteer () {
 
     return <div style={{display:"flex", flexDirection:"column", gap: 80}}>
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={volunteer} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+            <img src={volunteer} alt="image of volunteers" style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 

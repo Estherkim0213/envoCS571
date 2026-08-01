@@ -10,7 +10,7 @@ function Volunteerinfo () {
     
     return <div style={{display:"flex", flexDirection: "column", gap: 80}}>
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={volunteer1} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+            <img src={volunteer1} alt="group picture with diverse people hugging" style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 

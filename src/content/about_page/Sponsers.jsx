@@ -13,7 +13,7 @@ function Sponsers () {
     
     return <div style={{display:"flex", flexDirection: "column", gap: 80}}>
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={sponsor1} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+            <img src={sponsor1} alt="hand holding green with people on top" style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 
@@ -43,7 +43,7 @@ function Sponsers () {
             </Container>
             <Outlet /> 
 
-            <img src={sponsor} style={{width:500, height:"100%", flex:4, padding: 80}}/>
+            <img src={sponsor} alt="picture with all the sponsors" style={{width:500, height:"100%", flex:4, padding: 80}}/>
 
         </div>
 

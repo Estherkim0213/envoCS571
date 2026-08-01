@@ -13,7 +13,7 @@ function EnvoLayout(props) {
                 <Container style={{margin:0}}>
                    <Nav>
                         <Nav.Link as={Link} to="/">
-                            <img src={planthand} style={{height: 50, width: 85, marginTop:-10}}/>
+                            <img src={planthand} alt="hand holding a plant" style={{height: 50, width: 85, marginTop:-10}}/>
                         </Nav.Link>
                         
                         <Nav.Link as={Link} to="/" style={{marginTop:5}}>Home</Nav.Link>

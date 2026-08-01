@@ -112,7 +112,7 @@ function EnvoDonate () {
     return <div style={{display:"flex", flexDirection: "column", gap: 30}}>
 
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={park} style={{opacity: "50%", width: "100%", height:300, objectFit:"cover"}}/>
+            <img src={park} alt="picture of mountains on yellowstone national park" style={{opacity: "50%", width: "100%", height:300, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 

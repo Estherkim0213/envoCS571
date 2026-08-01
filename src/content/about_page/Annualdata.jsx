@@ -12,7 +12,7 @@ function Annualdata () {
     
     return <div style={{display:"flex", flexDirection: "column", gap: 80}}>
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={annual} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+            <img src={annual} alt="picture of data lines" style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 
@@ -108,7 +108,7 @@ function Annualdata () {
                     data is being collected and displayed onto our website!  
                 </p>
                     <div style={{display: "flex", flexDirection:"row",}}>
-                            <img src={annual} style={{maxWidth: 400, height: 400, objectFit:"cover",}}/>
+                            <img src={annual} alt="cool picture of something data related" style={{maxWidth: 400, height: 400, objectFit:"cover",}}/>
                             <div style={{display: "flex",
                                         flexDirection: "column", 
                                         justifyContent:"center", 

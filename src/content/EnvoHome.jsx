@@ -15,7 +15,7 @@ function EnvoHome () {
     return <div style={{display: "flex", flexDirection:"column", gap: 80}}>
 
         <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
-            <img src={forest} style={{opacity: "50%", maxWidth: "100%", width: "fit-content"}}/>
+            <img src={forest} alt="image of a forest up view" style={{opacity: "50%", maxWidth: "100%", width: "fit-content"}}/>
 
             <div style={{position:"absolute", 
                         top:0, 
@@ -32,7 +32,7 @@ function EnvoHome () {
         </div>
               
         <div style={{display: "flex", flexDirection:"row"}}>
-            <img src={woods} style={{maxWidth: 700, height: 600, marginLeft: 50, objectFit:"cover"}}/>
+            <img src={woods} alt="image of woods 1st person view" style={{maxWidth: 700, height: 600, marginLeft: 50, objectFit:"cover"}}/>
             <div style={{display: "flex",
                         flexDirection: "column", 
                         justifyContent:"center", 
@@ -110,7 +110,7 @@ function EnvoHome () {
                   continue to do so.
                 </h2>
             </div>
-            <img src={panel} style={{maxWidth: 600, height: 500, objectFit:"cover", margin:50}}/>
+            <img src={panel} alt="meeting image with Alice up front" style={{maxWidth: 600, height: 500, objectFit:"cover", margin:50}}/>
         </div>
 
 
@@ -127,7 +127,6 @@ function EnvoHome () {
                               role="presentation"
                               aria-hidden="true"
                             >
-                            <img src={insta}/>
                             </svg>
                             Instagram
                         </a>
@@ -139,7 +138,6 @@ function EnvoHome () {
                               role="presentation"
                               aria-hidden="true"
                             >
-                            <use href="/icons.svg#x-icon"></use>
                             </svg>
                             X.com
                         </a>
