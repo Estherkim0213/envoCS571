@@ -5,89 +5,136 @@ import { Form, Button} from "react-bootstrap";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, Outlet, Route } from "react-router";
 
+import volunteer from "../assets/volunteer.webp"
+
 
 
 const options = [
-  { value: 'Computer Systems', label: 'Computer Systems' },
-  { value: 'Working in Fields', label: 'Working in Fields' },
-  { value: 'Finance Organizer', label: 'Finance Organizer' }
+  { value: 'finances', label: 'Finances' },
+  { value: 'tree planting', label: 'Tree Planting' },
+  { value: 'garbage picker', label: 'Garbage Picker' },
+  { value: 'IT', label: 'IT Systems' }
 ]
   
 
 function EnvoVolunteer () {
     
-    const [name, setName] = useState("");
+    const [first, setFirst] = useState("");
+    const [last, setLast] = useState("");
     const [number, setNumber] = useState("");
     const [email, setEmail] = useState("");
 
+    const [errormsg, setErrormsg] = useState("");
+
     const submitForm = () =>{
-        sessionStorage.setItem('name', name);
+        if (first === "" || last === "" || email === ""){
+            setErrormsg("Please fill out all required inputs");
+            return;
+        }
+
+        setErrormsg(e => e = "");
+        sessionStorage.setItem('first', first);
+        sessionStorage.setItem('last', last);
         sessionStorage.setItem('number', number);
         sessionStorage.setItem('email', email);
+
+        setEmail(e => e = "");
+        setFirst(e => e = "");
+        setLast(e => e = "");
+        setNumber(e => e = "");
+
+        alert(`Thanks ${first} for signing up to Volunteer! We will email you shortly with more info`)
     }
 
-    return <>
-        <h1>Volunteer</h1>
-        <p style={{fontSize:14}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec 
-            lacus eu enim lobortis volutpat. Integer sollicitudin libero vitae faucibus
-             pretium. Nulla eget ullamcorper nisi. Donec at maximus ipsum. Duis at finibus purus. 
-             Curabitur sit amet porttitor nibh, in mattis ex. Vestibulum pellentesque placerat congue.
-              Morbi sed erat sit amet quam volutpat facilisis vel venenatis quam. Pellentesque accumsan, 
-              nisi at auctor vestibulum, mi velit scelerisque est, quis commodo magna urna sed magna.
-              <br/>
-            Fusce vehicula scelerisque scelerisque. Suspendisse interdum ultricies lorem fermentum 
-            elementum. Fusce aliquam erat quis diam posuere pretium. Nullam non elit vel dolor
-             accumsan interdum sit amet sed lectus. Proin vel dictum sapien. Proin ac mi massa. Maecenas 
-             congue, enim quis tincidunt imperdiet, tortor elit facilisis neque, id malesuada ligula nibh 
-             quis lectus. Nullam sit amet interdum nisl.
-             <br/>
-            Proin eu elit volutpat, placerat massa ac, porta ligula. Sed mi diam, convallis sed lorem 
-            vitae, eleifend rhoncus lacus. Integer id dignissim lorem, ut accumsan neque. Fusce sodales, 
-            nunc eget rhoncus ullamcorper, dui nisi sollicitudin erat, eu mattis ligula enim eget nisi. Ut 
-            varius hendrerit felis, vel hendrerit lorem fermentum quis. In hac habitasse platea dictumst. 
-            Mauris nec tempor ipsum. Nullam magna purus, malesuada et tellus quis, sodales varius dui. Nam 
-            luctus blandit nibh. Integer dictum lacus in sem tristique gravida.
-        </p>
+    return <div style={{display:"flex", flexDirection:"column", gap: 80}}>
+        <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
+            <img src={volunteer} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+
+            <div style={{position:"absolute", 
+                        top:0, 
+                        left: 0,
+                        display: "flex",
+                        flexDirection: "column", 
+                        justifyContent:"center", 
+                        alignItems: "center",
+                        width: "100%",
+                        height: "100%",
+                        padding: 60}}>
+                <h1>Volunteer</h1>
+                <p style={{color: "white"}}>Donate your time and spend your weekend doing good for your community! 
+                    Our environment is only impacted as much as the people who put in the effort, which is why we value each
+                    volunteer and makes your work so much more impactful. We offer a variety of roles, some with more extensive processes
+                    than others. Want to do something fun with friends and family? Sign up! 
+                    Curious about what you'll be doing? Check our our volunteer info page! </p>
+            </div>
+        </div>
 
         <div id="allContainer" style={{display:"flex", justifyContent:"space-between"}}>
 
             <Container style={{flex:1}} >
-                <Nav className="flex-column">
-                    <Nav.Link as={Link} to="/volunteer">Volunteer info</Nav.Link>        
-                    <Nav.Link as={Link} to="/" >Volunteer</Nav.Link>
-                    <Nav.Link as={Link} to="/donate">Speak out</Nav.Link>                    
+                <Nav className="flex-column" >
+                    <Nav.Link as={Link} to="/volunteerinfo">Volunteer info</Nav.Link>        
+                    <Nav.Link as={Link} to="/volunteer" >Volunteer</Nav.Link>
+                    <Nav.Link as={Link} to="/guestspeaker">Guest Speakers</Nav.Link>
                 </Nav>
             </Container>
             <Outlet /> 
 
-            <Container style={{ flex:4}}>
+            <div style={{margin:50, flex:4}}>
+             <p >Donate your time and spend your weekend doing good for your community! 
+                    Our environment is only impacted as much as the people who put in the effort, which is why we value each
+                    volunteer and makes your work so much more impactful. We offer a variety of roles, some with more extensive processes
+                    than others. Want to do something fun with friends and family? Sign up! 
+                    Curious about what you'll be doing? Check our our volunteer info page! </p>
+
+            <div style={{borderColor: "grey", borderStyle: "solid", borderWidth:1, padding: 30}}>
                 <h2>Register</h2>
-                <Form style={{display:"flex", flexDirection:"column", margin: 20}} onSubmit={submitForm}>
-                    <Form.Label htmlFor="name">Name</Form.Label>
-                    <input id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}/>
+                <Form style={{display:"flex", flexDirection:"column", gap: 20}}>
 
-                    <Form.Label htmlFor="number">Phone Number</Form.Label>
-                    <input id="number"
-                    value={number}
-                    onChange={(e) => setNumber(e.target.value)}/>
+                    <div style={{display:"flex", flexDirection:"column", textAlign:"left"}}>
+                        <Form.Label htmlFor="name">Name*</Form.Label>
+                        <div style={{display:"flex", flexDirection:"row", gap: 10}}>
+                            <input id="first"
+                            value={first}
+                            placeholder="First"
+                            onChange={(e) => setFirst(e.target.value)}/>
+                            <input id="last"
+                            value={last}
+                            placeholder="Last"
+                            onChange={(e) => setLast(e.target.value)}/>
+                        </div>
+                    </div>
 
-                    <Form.Label htmlFor="email">Email</Form.Label>
-                    <input id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}/>
-                    <Select options={options} />
+                    <div style={{display:"flex", flexDirection:"column", textAlign:"left"}}>
+                        <Form.Label htmlFor="email">Email*</Form.Label>
+                        <input id="email"
+                        value={email}
+                        placeholder="example@email.com"
+                        onChange={(e) => setEmail(e.target.value)}/>
+                    </div>
 
-                    <Button type='submit' style={{margin:10}}>Register</Button>
+                    <div style={{display:"flex", flexDirection:"column", textAlign:"left"}}>
+                        <Form.Label htmlFor="number">Phone Number</Form.Label>
+                        <input id="number"
+                        value={number}
+                        placeholder="Optional"
+                        style={{fontStyle:"italic"}}
+                        onChange={(e) => setNumber(e.target.value)}/>
+                    </div>
+
+                    <Select options={options}/>
+
+                    <p hidden={!errormsg} style={{color:"red"}}>{errormsg}</p>
+                    <Button style={{margin:10}} onClick={submitForm}>Register</Button>
                 </Form>
-            </Container>
+            </div>
+            </div>
 
         </div>
 
         
         
-    </>
+    </div>
 }
 
 export default EnvoVolunteer;

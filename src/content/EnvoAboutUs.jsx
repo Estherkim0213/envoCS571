@@ -1,6 +1,6 @@
 import React, { memo, useState} from "react"
 import blankpic from '../assets/blankpic.png'
-
+import ppl from '../assets/staff.jpg'
 
 import { Form, Button} from "react-bootstrap";
 import { Container, Nav, Navbar, NavDropdown, Card, Row, Col} from "react-bootstrap";
@@ -8,51 +8,61 @@ import { Link, Outlet, Route } from "react-router";
 
 
 function EnvoAboutUs () {
-    const [name, setName] = useState("");
-    const [number, setNumber] = useState("");
-    const [email, setEmail] = useState("");
 
-    const staff = ["Melia Harris", "Wyatt Smith", "Esther Kim", "Cat Nelson", "Saranya Sahhid"];
-    const desc = ". Nulla eget ullamcorper nisi. Donec at maximus ipsum. Duis at finibus purus. Curabitur sit amet porttitor nibh, in mattis ex. Vestibulum pellentesque placerat congu"
+    const staff = [
+        {name: "Melia Harris", role:"Senior Developer"}, 
+        {name: "Wyatt Smith", role: "Head of Finance"}, 
+        {name: "Esther Kim", role: "CEO"}, 
+        {name:"Cat Nelson", role: "Director"}, 
+        {name: "Ruijia Chen", role:"Operations Manager"}
+    ];
 
-    return <>
-        <h1>About Us</h1>
-        <p>Heres some information about us! We are a nonprofit organization 
-            that focuses on saving our local and bigger forests! We started off with 
-            a team of only 4 people but not have grown to be upwards to 1000!
-            <br/>
-            orem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec lacus 
-            eu enim lobortis volutpat. Integer sollicitudin libero vitae faucibus pretium. 
-            Nulla eget ullamcorper nisi. Donec at maximus ipsum. Duis at finibus purus. 
-            Curabitur sit amet porttitor nibh, in mattis ex. Vestibulum pellentesque placerat 
-            congue. Morbi sed erat sit amet quam volutpat facilisis vel venenatis quam. 
-            Pellentesque accumsan, nisi at auctor vestibulum, mi velit scelerisque est, 
-            quis commodo magna urna sed magna.
-        </p>
+    return <div style={{display:"flex", flexDirection: "column", gap: 80}}>
+
+        <div style={{backgroundColor:"black", opacity:"90%", position:"relative"}}>
+            <img src={ppl} style={{opacity: "50%", width: "100%", height:600, objectFit:"cover"}}/>
+
+            <div style={{position:"absolute", 
+                        top:0, 
+                        left: 0,
+                        display: "flex",
+                        flexDirection: "column", 
+                        justifyContent:"center", 
+                        alignItems: "center",
+                        width: "100%",
+                        height: "100%",
+                        padding: 60}}>
+                <h1>Meet Our Crew</h1>
+                <p style={{color: "white"}}> Starting with a team of only 4, 
+                        we now have grown our family to over 1000! 
+                        <br/>
+                        Meet the Staff who make all of this happen!
+                    </p>
+            </div>
+        </div>
 
         <div id="allContainer" style={{display:"flex", justifyContent:"space-between"}}>
 
             <Container style={{flex:1}} >
                 <Nav className="flex-column">
-                    <Nav.Link as={Link} to="/volunteer">Staff</Nav.Link>        
-                    <Nav.Link as={Link} to="/" >About us</Nav.Link>
-                    <Nav.Link as={Link} to="/donate">Sponsers</Nav.Link> 
-                    <Nav.Link as={Link} to="/donate">Annual data</Nav.Link>                    
+                    <Nav.Link as={Link} to="/staff">Staff</Nav.Link>        
+                    <Nav.Link as={Link} to="/aboutus" >About us</Nav.Link>
+                    <Nav.Link as={Link} to="/sponsors">Sponsors</Nav.Link> 
+                    <Nav.Link as={Link} to="/annualdata">Annual data</Nav.Link>                    
                 </Nav>
             </Container>
             <Outlet /> 
             
-            <Container>
+            <Container style={{flex:4}}>
             <h2>Meet our Staff</h2>
             <Row>
                 {
                     staff.map( element =>(
-                        <Col xs={12} md={6} lg={4} xl={3} key={element}>
+                        <Col xs={12} md={6} lg={4} xl={4} key={element.name}>
                             <Card style={{margin: "0.5rem", padding: "0.5rem"}}>
                                 <img src={blankpic} alt="staff picture"/>
-                                <h2>{element}</h2>
-                                <i>role</i>
-                                <p>{desc}</p>
+                                <h2>{element.name}</h2>
+                                <i>{element.role}</i>
                             </Card>
                         </Col>
                     ))
@@ -62,7 +72,7 @@ function EnvoAboutUs () {
             
 
         </div>
-    </>
+    </div>
 }
 
 export default EnvoAboutUs;
