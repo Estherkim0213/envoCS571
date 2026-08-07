@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/envoCS571">
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<EnvoLayout/>}>
 
