@@ -210,7 +210,6 @@ function EnvoDonate () {
                 <input style={{flex:1}}
                 id="cvc"
                 value={cvc}
-                type="number"
                 placeholder="CVC"
                 type="password"
                 onChange={(e) => setCvc(e.target.value)}/>
